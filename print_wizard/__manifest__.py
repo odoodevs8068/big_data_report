@@ -22,5 +22,6 @@
     'installable': True,
     'application': True,
     'auto_install': False,
-        'license':  "Other proprietary",
+    'license': 'AGPL-3',
+    'images': ['static/description/assets/screenshots/banner.png'],
 }
