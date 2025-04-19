@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+   <t t-name="DownloadReport.ListButtons" t-inherit="web.ListView.buttons" t-inherit-mode="extension">
+       <xpath expr="//button[contains(@class, 'o_list_export_xlsx')]" position="before">
+           <button type="button" style="border: outset;margin-left: 10px; margin-right: 10px;" class="btn btn-secondary fa fa-download o_button_download_report" id="download_report">
+               <span style="font-family: none;">Download Report</span>
+           </button>
+       </xpath>
+   </t>
+</templates>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_print_wizard_form" model="ir.ui.view">
+        <field name="name">view_print_wizard_form</field>
+        <field name="model">print_wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="report_type" required="1"/>
+                            <field name="date_filter" attrs="{'invisible': [('report_type', 'in', ('bom_report', False))]}"/>
+                        </group>
+                        <group>
+                            <field name="date_from" attrs="{'invisible': [('date_filter', '!=', 'custom_date')]}"/>
+                            <field name="date_to" attrs="{'invisible': [('date_filter', '!=', 'custom_date')]}"/>
+                            <field name="categ_id"
+                                   attrs="{'invisible': [('report_type', 'not in', ('valuation_report', 'movement_report', 'ov_movement_report'))]}"
+                                   widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name='button_print_report' string="Print" class="btn-primary" type="object" />
+                    <button string="CANCEL" class="button_cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_print_wizard" model="ir.actions.act_window">
+        <field name="name">Print Wizard</field>
+        <field name="res_model">print_wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_id" ref="view_print_wizard_form"/>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.module.category" id="module_category_custom_report">
+            <field name="name">Reports</field>
+            <field name="sequence">503</field>
+    </record>
+    <record id="group_sales_reports" model="res.groups">
+        <field name="name">Sales Delivered/Undelivered Report</field>
+        <field name="category_id" ref="print_wizard.module_category_custom_report"/>
+    </record>
+    <record id="group_sales_po_report" model="res.groups">
+        <field name="name">Sales PO Report</field>
+        <field name="category_id" ref="print_wizard.module_category_custom_report"/>
+    </record>
+    <record id="group_sales_with_inv_report" model="res.groups">
+        <field name="name">Sales With Invoice Report</field>
+        <field name="category_id" ref="print_wizard.module_category_custom_report"/>
+    </record>
+    <record id="group_stock_report_damad" model="res.groups">
+        <field name="name">Inventory Movement Report</field>
+        <field name="category_id" ref="print_wizard.module_category_custom_report"/>
+    </record>
+    <record id="group_bom_report_damad" model="res.groups">
+        <field name="name">BOM Structure &amp; Cost Report</field>
+        <field name="category_id" ref="print_wizard.module_category_custom_report"/>
+    </record>
+
+</odoo>
